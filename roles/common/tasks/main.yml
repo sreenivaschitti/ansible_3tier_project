@@ -1,0 +1,19 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/common
+- name: Create devops user
+  ansible.builtin.user:
+    name: devops
+    shell: /bin/bash
+    create_home: true
+    state: present
+
+- name: Install common packages
+  ansible.builtin.dnf:
+    name:
+      - git
+      - vim
+      - curl
+      - wget
+      - unzip
+    state: present
