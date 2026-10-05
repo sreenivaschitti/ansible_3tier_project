@@ -1,0 +1,25 @@
+---
+- name: Install Git
+  ansible.builtin.dnf:
+    name: git
+    state: present
+
+- name: Install Node.js
+  ansible.builtin.dnf:
+    name: nodejs
+    state: present
+
+- name: Create application user
+  ansible.builtin.user:
+    name: appuser
+    shell: /bin/bash
+    create_home: true
+    state: present
+
+- name: Create application directory
+  ansible.builtin.file:
+    path: /opt/employee-app
+    state: directory
+    owner: appuser
+    group: appuser
+    mode: '0755'
