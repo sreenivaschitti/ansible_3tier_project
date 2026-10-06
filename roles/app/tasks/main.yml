@@ -48,6 +48,16 @@
   ansible.builtin.debug:
     msg: "Node.js version: {{ node_version.stdout }}"
 
+- name: Install Node.js dependencies
+  ansible.builtin.command:
+    cmd: npm install
+    chdir: "{{ app_dir }}"
+  become_user: "{{ app_user }}"
+  environment:
+    HOME: "/home/{{ app_user }}"
+  register: npm_install
+  changed_when: "'up to date' not in npm_install.stdout"    
+
 - name: Install application systemd service
   ansible.builtin.template:
     src: employee-app.service.j2
