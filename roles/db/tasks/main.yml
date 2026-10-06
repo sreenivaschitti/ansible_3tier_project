@@ -1,11 +1,5 @@
 ---
-- name: Install required packages
-  ansible.builtin.dnf:
-    name:
-      - wget
-      - curl
-      - vim
-    state: present
+
 
 - name: Add MongoDB repository
   ansible.builtin.copy:
