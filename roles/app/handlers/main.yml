@@ -1,0 +1,6 @@
+---
+- name: Restart employee application
+  ansible.builtin.systemd:
+    name: employee-app
+    state: restarted
+    daemon_reload: true

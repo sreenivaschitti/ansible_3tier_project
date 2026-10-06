@@ -1,0 +1,12 @@
+---
+app_user: appuser
+app_name: employee-app
+app_dir: /opt/employee-app
+
+app_port: 3000
+mongodb_host: 172.31.30.49
+mongodb_port: 27017
+mongodb_database: employee_db
+
+app_repo: "https://github.com/sreenivaschitti/employee_app.git"
+app_branch: main
