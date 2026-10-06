@@ -13,7 +13,6 @@
     name:
       - git
       - vim
-      - curl
       - wget
       - unzip
     state: present

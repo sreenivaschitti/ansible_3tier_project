@@ -1,9 +1,7 @@
 ---
 - name: Install required packages
   ansible.builtin.dnf:
-    name:
-      - git
-      - nodejs
+    name: nodejs
     state: present
 
 - name: Create application user
